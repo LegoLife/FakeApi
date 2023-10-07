@@ -1,4 +1,4 @@
-namespace API;
+namespace FakeApi.Dto;
 
 public class WeatherForecast
 {
