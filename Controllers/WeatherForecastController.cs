@@ -1,7 +1,7 @@
 using FakeApi.Dto;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API.Controllers;
+namespace FakeApi.Controllers;
 
 public class WeatherForecastController : BaseController
 {
@@ -18,9 +18,9 @@ public class WeatherForecastController : BaseController
 	}
 
 	[HttpGet(Name = "GetWeatherForecast")]
-	public IEnumerable<WeatherForecast> Get()
+	public IEnumerable<WeatherForecast> Get(int ct=10)
 	{
-		return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+		return Enumerable.Range(1, ct).Select(index => new WeatherForecast
 			{
 				Date = DateTime.Now.AddDays(index),
 				TemperatureC = Random.Shared.Next(-20, 55),

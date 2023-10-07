@@ -1,11 +1,11 @@
-﻿namespace API.Services;
+﻿namespace FakeApi.Services;
 
 public static class ServerNameGenerator
 {
 	private static readonly string[] Adjectives = { "Red", "Blue", "Green", "Yellow", "Orange", "Purple", "Silver", "Golden" };
 	private static readonly string[] Nouns = { "Server", "Machine", "Node", "Host", "Cluster", "System", "Gateway", "Cloud" };
 	private static readonly string[] Types = {"DC","DB","APP" }; 
-	private static Random random = new Random();
+	private static Random random = new ();
 
 	public static string GenerateServerName()
 	{

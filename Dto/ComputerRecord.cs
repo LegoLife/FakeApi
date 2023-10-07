@@ -1,6 +1,4 @@
-﻿using System.Net;
-
-namespace API.Dto;
+﻿namespace FakeApi.Dto;
 
 public class ComputerRecord
 {
@@ -16,4 +14,6 @@ public class ComputerRecord
 public class Location
 {
 	public string Country { get; set; }
+	public double Latitude { get; set; }
+	public double Longitude { get; set; }
 }
