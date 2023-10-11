@@ -1,6 +1,6 @@
 ﻿# Fake Data API in .NET C# README
 
-Welcome to the SampleApi project in .NET C#! This project provides a simple API that generates and returns fake data for various use cases. Whether you're testing an application, prototyping, or just need some placeholder data, this API can help you quickly and easily obtain realistic-looking data.
+Welcome to the FakeApi project in .NET C#! This project provides a simple API that generates and returns fake data for various use cases. Whether you're testing an application, prototyping, or just need some placeholder data, this API can help you quickly and easily obtain realistic-looking data.
 
 ## Table of Contents
 
@@ -10,16 +10,16 @@ Welcome to the SampleApi project in .NET C#! This project provides a simple API 
 
 ## Getting Started
 
-To get started with the SampleApi, follow these steps:
+To get started with the FakeApi, follow these steps:
 
 1. **Clone the Repository:**
    ```
-   git clone https://github.com/LegoLife/SampleApi.git
+   git clone https://github.com/LegoLife/FakeApi.git
    ```
 
 2. **Build the Project:**
    ```
-   cd SampleApi
+   cd FakeApi
    dotnet build
    ```
 
