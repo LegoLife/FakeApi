@@ -30,8 +30,7 @@ To get started with the FakeApi, follow these steps:
 
 4. **Access the API:**
     - Open your web browser or use a tool like [Postman](https://www.postman.com/) to interact with the API.
-    - The API will be available at `http://localhost:44319`
-
+    - API Documentation found here: https://localhost:7227/swagger/index.html
 
 ## Contributing
 
