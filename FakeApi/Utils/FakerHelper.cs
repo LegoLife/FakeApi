@@ -26,7 +26,6 @@ public  class FakerHelper
 	{
 		var faker = new Faker<VehicleRecord>();
 		faker.RuleFor(x => x.Id, f => f.Random.Int(1));
-
 		faker.RuleFor(x => x.Vin, f => f.Vehicle.Vin());
 		faker.RuleFor(x => x.Manufacturer, f => f.Vehicle.Manufacturer());
 		faker.RuleFor(x => x.Model, f => f.Vehicle.Model());

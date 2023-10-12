@@ -35,7 +35,6 @@ C:\Users\jake\source\repos\FakeApi\obj\Debug\net7.0\FakeApi.genruntimeconfig.cac
 C:\Users\jake\source\repos\FakeApi\obj\Debug\net7.0\ref\FakeApi.dll
 C:\Users\jake\source\repos\Fake\FakeApi\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\jake\source\repos\Fake\FakeApi\bin\Debug\net7.0\appsettings.json
-C:\Users\jake\source\repos\Fake\FakeApi\bin\Debug\net7.0\jsonData\vehicles.json
 C:\Users\jake\source\repos\Fake\FakeApi\bin\Debug\net7.0\FakeApi.exe
 C:\Users\jake\source\repos\Fake\FakeApi\bin\Debug\net7.0\FakeApi.deps.json
 C:\Users\jake\source\repos\Fake\FakeApi\bin\Debug\net7.0\FakeApi.runtimeconfig.json

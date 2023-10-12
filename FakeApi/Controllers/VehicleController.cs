@@ -12,16 +12,14 @@ public class VehicleController : BaseController
     public VehicleController( IRepository<VehicleRecord> repo)
     {
         _repo = repo;
-#if DEBUG
         var data = new FakerHelper().VehicleRecords();
         _repo.AddRange(data.ToList());
-#endif
     }
 
     [HttpGet]
-    public List<VehicleRecord> Data(int ct=100)
+    public List<VehicleRecord> Data()
     {
-        return _repo.GetAll().Take(ct).ToList();
+        return _repo.GetAll().ToList();
     }
 
     [HttpPost]

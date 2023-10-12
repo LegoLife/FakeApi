@@ -19,7 +19,6 @@ builder.Services.AddScoped<IRepository<VehicleRecord>, FakeRepo<VehicleRecord>>(
 
 Log.Logger = new LoggerConfiguration()
 	.WriteTo.Console()
-	.WriteTo.File($"{Environment.CurrentDirectory}\\logs\\api-.log")
 	.CreateLogger();
 
 

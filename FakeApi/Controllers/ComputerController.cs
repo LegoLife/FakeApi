@@ -13,16 +13,14 @@ public class ComputerController : BaseController
     public ComputerController( IRepository<ComputerRecord> repo)
     {
         _repo = repo;
-#if DEBUG
         var data = new FakerHelper().ComputerRecords();
         _repo.AddRange(data.ToList());
-#endif
     }
 
     [HttpGet]
-    public List<ComputerRecord> Data(int ct=100)
+    public List<ComputerRecord> Data()
     {
-        return _repo.GetAll().Take(ct).ToList();
+        return _repo.GetAll().ToList();
     }
     
     [HttpPost]
