@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeApi", "FakeApi\FakeApi.csproj", "{ADDAB460-8EFF-4BBB-AF7D-F0128AE47A90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{DCD4D248-6D6B-4A38-9BE7-E1915F5B9A92}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADDAB460-8EFF-4BBB-AF7D-F0128AE47A90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADDAB460-8EFF-4BBB-AF7D-F0128AE47A90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADDAB460-8EFF-4BBB-AF7D-F0128AE47A90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADDAB460-8EFF-4BBB-AF7D-F0128AE47A90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCD4D248-6D6B-4A38-9BE7-E1915F5B9A92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCD4D248-6D6B-4A38-9BE7-E1915F5B9A92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCD4D248-6D6B-4A38-9BE7-E1915F5B9A92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCD4D248-6D6B-4A38-9BE7-E1915F5B9A92}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
