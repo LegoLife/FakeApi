@@ -1,11 +1,13 @@
 using System.Threading.RateLimiting;
 using FakeApi.Abstractions;
+using FakeApi.Data;
+using FakeApi.Data.Repositories;
 using FakeApi.Dto;
-using FakeApi.Utils;
 using Microsoft.AspNetCore.Http.Extensions;
-using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.RateLimiting;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
+using Tests.Data.FakeRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,9 +15,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IRepository<ComputerRecord>, FakeRepo<ComputerRecord>>();
-builder.Services.AddScoped<IRepository<VehicleRecord>, FakeRepo<VehicleRecord>>();
 
+builder.Services.AddDbContext<SqlDbContext>(ops =>
+{
+	ops.UseSqlServer(builder.Configuration.GetConnectionString("ApiDbConnection"));
+});
+builder.Services.AddScoped<IRepository<ComputerRecord>, ComputerRepository>();
+builder.Services.AddScoped<IRepository<VehicleRecord>, VehicleRepository>();
+builder.Services.AddScoped<IRepository<MenuItem>, DinnerMenuRepository>();
 
 Log.Logger = new LoggerConfiguration()
 	.WriteTo.Console()
@@ -59,6 +66,7 @@ if (app.Environment.IsProduction())
 				});
 		}),
 		RejectionStatusCode = 429
+		
 	});
 }
 

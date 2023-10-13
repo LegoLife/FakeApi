@@ -1,9 +1,10 @@
-﻿using FakeApi.Abstractions;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using FakeApi.Abstractions;
 
 namespace FakeApi.Dto;
 
-
-public class ComputerRecord : IId
+[Table("Computer")]
+public class ComputerRecord
 {
 	public int Id { get; set; }
 	public string Name { get; set; }

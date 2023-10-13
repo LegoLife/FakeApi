@@ -1,13 +1,10 @@
-using Bogus;
 using FakeApi.Abstractions;
 using FakeApi.Controllers;
 using FakeApi.Dto;
-using FakeApi.Utils;
-using Microsoft.AspNetCore.Mvc;
-using NuGet.Frameworks;
-using NUnit.Framework.Internal;
+using Tests.Data.FakeRepositories;
+using Tests.Utils;
 
-namespace Tests;
+namespace Tests.ControllerTests;
 
 public class ComputerRecordsTests
 {
@@ -16,7 +13,7 @@ public class ComputerRecordsTests
     [SetUp]
     public void Init()
     {
-        repo = new FakeRepo<ComputerRecord>();
+        repo = new FakeComputerRepository();
         repo.AddRange(new FakerHelper().ComputerRecords(recordCt));
     }
 
@@ -40,7 +37,7 @@ public class ComputerRecordsTests
     public void AllDataPopulated()
     {
         var ctlr = new ComputerController(this.repo);
-        var res = ctlr.Data();
+        var res = ctlr.All();
         Assert.IsTrue(res.All(x => x.Id > 0));
 
         Assert.IsTrue(res.All(x => !string.IsNullOrEmpty(x.Name)));

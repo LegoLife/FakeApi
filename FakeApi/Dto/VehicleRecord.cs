@@ -1,8 +1,10 @@
-﻿using FakeApi.Abstractions;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using FakeApi.Abstractions;
 
 namespace FakeApi.Dto;
 
-public class VehicleRecord : IId
+[Table("Vehicle")]
+public class VehicleRecord 
 {
 	public string Vin { get; set; }
 	public string Manufacturer { get; set; }

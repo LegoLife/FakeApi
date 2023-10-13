@@ -1,13 +1,6 @@
-﻿using FakeApi.Dto;
+﻿namespace FakeApi.Abstractions;
 
-namespace FakeApi.Abstractions;
-
-public interface IId
-{
-    int Id { get; }
-}
-
-public interface IRepository<T>
+public interface IRepository<T> where T:class
 {
     void Update(T entity);
 

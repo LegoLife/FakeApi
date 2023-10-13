@@ -1,9 +1,10 @@
 ﻿using FakeApi.Abstractions;
 using FakeApi.Controllers;
 using FakeApi.Dto;
-using FakeApi.Utils;
+using Tests.Data.FakeRepositories;
+using Tests.Utils;
 
-namespace Tests;
+namespace Tests.ControllerTests;
 
 public class VehicleRecordsTests
 {
@@ -12,7 +13,7 @@ public class VehicleRecordsTests
     [SetUp]
     public void Init()
     {
-        repo = new FakeRepo<VehicleRecord>();
+        repo = new FakeVehicleRepository();
         repo.AddRange(new FakerHelper().VehicleRecords(recordCt));
     }
 
@@ -36,7 +37,7 @@ public class VehicleRecordsTests
     public void DataPopulated()
     {
         var ctlr = new VehicleController(this.repo);
-        var res = ctlr.Data();
+        var res = ctlr.All();
         
         Assert.IsTrue(res.All(x => x.Id>0));
 

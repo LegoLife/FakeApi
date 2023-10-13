@@ -1,42 +1,40 @@
-﻿using Bogus;
-using FakeApi.Abstractions;
+﻿using FakeApi.Abstractions;
 using FakeApi.Dto;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FakeApi.Controllers;
 
-public class ComputerController : BaseController
+public class DinnerMenuController:BaseController
 {
-    private readonly IRepository<ComputerRecord> _repo;
+    private readonly IRepository<MenuItem> _repo;
 
-    public ComputerController(IRepository<ComputerRecord> repo)
+    public DinnerMenuController(IRepository<MenuItem> repo)
     {
         _repo = repo;
-       
     }
 
     [HttpGet]
-    public List<ComputerRecord> All()
+    public List<MenuItem> All()
     {
         return _repo.GetAll().ToList();
     }
     
     [HttpPost]
-    public IActionResult Delete(ComputerRecord rec)
+    public IActionResult Delete(MenuItem rec)
     {
         this._repo.Delete(rec);
         return NoContent();
     }
     
     [HttpPost]
-    public IActionResult Add(ComputerRecord rec)
+    public IActionResult Add(MenuItem rec)
     {
         this._repo.Add(rec);
         return CreatedAtAction(nameof(Add),  rec);
     }
     
     [HttpPost]
-    public IActionResult AddMany(IEnumerable<ComputerRecord> computerRecords)
+    public IActionResult AddMany(IEnumerable<MenuItem> computerRecords)
     {
         this._repo.AddRange(computerRecords);
         return CreatedAtAction(nameof(Add), computerRecords);

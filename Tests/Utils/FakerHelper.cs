@@ -1,10 +1,7 @@
-﻿using System.CodeDom.Compiler;
-using Bogus;
-using FakeApi.Abstractions;
+﻿using Bogus;
 using FakeApi.Dto;
-using Serilog;
 
-namespace FakeApi.Utils;
+namespace Tests.Utils;
 
 public  class FakerHelper
 {

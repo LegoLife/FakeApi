@@ -1,6 +1,5 @@
 ﻿using FakeApi.Abstractions;
 using FakeApi.Dto;
-using FakeApi.Utils;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FakeApi.Controllers;
@@ -9,15 +8,13 @@ public class VehicleController : BaseController
 {
     private readonly IRepository<VehicleRecord> _repo;
 
-    public VehicleController( IRepository<VehicleRecord> repo)
+    public VehicleController(IRepository<VehicleRecord> repo)
     {
         _repo = repo;
-        var data = new FakerHelper().VehicleRecords();
-        _repo.AddRange(data.ToList());
     }
 
     [HttpGet]
-    public List<VehicleRecord> Data()
+    public List<VehicleRecord> All()
     {
         return _repo.GetAll().ToList();
     }

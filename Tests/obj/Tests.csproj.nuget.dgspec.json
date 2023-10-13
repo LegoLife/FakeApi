@@ -55,6 +55,10 @@
               "target": "Package",
               "version": "[7.0.12, )"
             },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.12, )"
+            },
             "Serilog": {
               "target": "Package",
               "version": "[3.0.1, )"
