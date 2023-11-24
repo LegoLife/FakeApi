@@ -1,7 +1,9 @@
 ﻿using FakeApi.Abstractions;
 using FakeApi.Dto;
+using Newtonsoft.Json;
+using Formatting = Newtonsoft.Json.Formatting;
 
-namespace Tests.Data.FakeRepositories;
+namespace FakeApi.Data.Repositories;
 
 public class DinnerMenuRepository : IRepository<MenuItem>
 {
@@ -11,12 +13,7 @@ public class DinnerMenuRepository : IRepository<MenuItem>
     {
         this.List = this.Data();
     }
-
-
-    public void Update(MenuItem entity)
-    {
-        
-    }
+    
 
     public MenuItem GetById(int id)
     {
@@ -31,46 +28,42 @@ public class DinnerMenuRepository : IRepository<MenuItem>
     public void Add(MenuItem entity)
     {
         this.List.Add(entity);
+        UpdateFile();
     }
 
     public void AddRange(IEnumerable<MenuItem> entity)
     {
         this.List.AddRange(entity);
+        UpdateFile();
     }
+    
 
     public void Delete(MenuItem entity)
     {
-       
+        var found = this.List.FirstOrDefault(x => x.Id == entity.Id);
+        if (found != null)
+            this.List.Remove(found);
+        UpdateFile();
+
     }
 
+    private void UpdateFile()
+    {
+        var serialized = JsonConvert.SerializeObject(this.List, Formatting.Indented);
+        var path = this.JsonFilePath();
+        if(File.Exists(path))
+            File.Delete(path);
+        File.WriteAllText(path,serialized);
+    }
+
+    private string JsonFilePath()
+    {
+        return $"{Environment.CurrentDirectory}\\Data\\menuItems.json";
+    }
     private List<MenuItem> Data()
     {
-        var list =  new List<MenuItem>()
-        {
-            new ()
-            {
-                MainCourseName = "Pork Chops",
-                Sides = new List<string>()
-                {
-                    "Green beans",
-                    "Mac-n-Cheese"
-                }
-            },
-            new ()
-            {
-                MainCourseName = "Creamy Italian Ravioli",
-                Sides = new List<string>()
-                {
-                    "Garlic Bread"
-                }
-            },
-            new ()
-            {
-                MainCourseName = "Sausage, potatoes & green bean stew"
-            }
-        };
-        
-        
+        var text = File.ReadAllText(JsonFilePath());
+        var list = JsonConvert.DeserializeObject<List<MenuItem>>(text);
         list.ForEach(x=>x.Id = list.IndexOf(x)+1);
         return list;
     }

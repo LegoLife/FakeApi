@@ -1,4 +1,5 @@
-﻿using FakeApi.Abstractions;
+﻿using Bogus;
+using FakeApi.Abstractions;
 using FakeApi.Dto;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,11 +20,12 @@ public class DinnerMenuController:BaseController
         return _repo.GetAll().ToList();
     }
     
-    [HttpPost]
-    public IActionResult Delete(MenuItem rec)
+    [HttpGet]
+    public List<MenuItem> GenerateMenu(int days=5)
     {
-        this._repo.Delete(rec);
-        return NoContent();
+        var list = this._repo.GetAll().ToList();
+        var ct = list.Count() >= days ? days : list.Count();
+        return new Faker().PickRandom(list, ct).ToList();
     }
     
     [HttpPost]
@@ -31,8 +33,17 @@ public class DinnerMenuController:BaseController
     {
         this._repo.Add(rec);
         return CreatedAtAction(nameof(Add),  rec);
+        
+    }
+    [HttpPost]
+    public IActionResult Delete(MenuItem rec)
+    {
+        this._repo.Delete(rec);
+        return NoContent();
     }
     
+    
+    //
     [HttpPost]
     public IActionResult AddMany(IEnumerable<MenuItem> computerRecords)
     {

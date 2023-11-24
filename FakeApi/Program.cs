@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
-using Tests.Data.FakeRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

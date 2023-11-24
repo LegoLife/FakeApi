@@ -21,6 +21,8 @@ public class ComputerController : BaseController
         return _repo.GetAll().ToList();
     }
     
+   
+    
     [HttpPost]
     public IActionResult Delete(ComputerRecord rec)
     {

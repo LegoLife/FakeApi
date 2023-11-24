@@ -1,0 +1,73 @@
+[
+  {
+    "Id": 1,
+    "MainCourseName": "Pork Chops",
+    "Sides": [
+      "Green beans",
+      "Mac-n-Cheese"
+    ]
+  },
+  {
+    "Id": 2,
+    "MainCourseName": "Creamy Italian Ravioli",
+    "Sides": [
+      "Garlic Bread"
+    ]
+  },
+  {
+    "Id": 3,
+    "MainCourseName": "Sausage, potatoes & green bean stew",
+    "Sides": []
+  },
+  {
+    "Id": 4,
+    "MainCourseName": "Steak",
+    "Sides": [
+      "Aspearagus",
+      "Mashed Potatoes"
+    ]
+  },
+  {
+    "Id": 5,
+    "MainCourseName": "Chicken Pot Pie Casserole",
+    "Sides": [
+      ""
+    ]
+  },
+  {
+    "Id": 6,
+    "MainCourseName": "Pork Burger",
+    "Sides": [
+      "Fries"
+    ]
+  },
+  {
+    "Id": 7,
+    "MainCourseName": "Steak",
+    "Sides": [
+      "Mac-n-Cheese"
+    ]
+  },
+  {
+    "Id": 8,
+    "MainCourseName": "Steak",
+    "Sides": [
+      "Potatoes"
+    ]
+  },
+  {
+    "Id": 9,
+    "MainCourseName": "Pork Chops",
+    "Sides": [
+      "Corn on the cobb"
+    ]
+  },
+  {
+    "Id": 10,
+    "MainCourseName": "Parmesan Crusted Chicken",
+    "Sides": [
+      "Mashed Potatoes",
+      "Green beans"
+    ]
+  }
+]
