@@ -27,12 +27,20 @@ public class DinnerMenuRepository : IRepository<MenuItem>
 
     public void Add(MenuItem entity)
     {
+        var max = this.List.Max(x => x.Id) + 1;
+        entity.Id = max;
         this.List.Add(entity);
         UpdateFile();
     }
 
     public void AddRange(IEnumerable<MenuItem> entity)
     {
+        var max = this.List.Max(x => x.Id) + 1;
+        foreach (var e in entity)
+        {
+            e.Id = max;
+            max++;
+        }
         this.List.AddRange(entity);
         UpdateFile();
     }
